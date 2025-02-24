@@ -32,13 +32,23 @@
         .gallery {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 20px; /* 图片容器之间的间距 */
+            flex-wrap: wrap; /* 如果图片过多，换行显示 */
         }
-        .gallery img {
-            max-width: 100%;
-            height: auto;
+        .gallery-item {
+            text-align: center;
+            max-width: 300px; /* 每个图片容器的最大宽度 */
+        }
+        .gallery-item img {
+            height: 200px; /* 统一图片高度 */
+            width: auto; /* 宽度自适应 */
             border-radius: 8px;
+            object-fit: cover; /* 保持图片比例 */
+        }
+        .gallery-item p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
         }
         .grid-container {
             display: grid;
@@ -79,9 +89,21 @@
     <section id="grasp-demo">
         <h2>Real-world Grasping Demo</h2>
         <div class="gallery">
-            <img src="https://raw.githubusercontent.com/Uopia/AdaGrasp/main/0.jpg" alt="Grasp Demo 1">
-            <img src="https://raw.githubusercontent.com/Uopia/AdaGrasp/main/1.jpg" alt="Grasp Demo 2">
-            <img src="https://raw.githubusercontent.com/Uopia/AdaGrasp/main/2.jpg" alt="Grasp Demo 3">
+            <!-- 图片1 -->
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/Uopia/AdaGrasp/main/0.jpg" alt="Grasp Demo 1">
+                <p>Demo 1: Grasping a rectangular object.</p>
+            </div>
+            <!-- 图片2 -->
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/Uopia/AdaGrasp/main/1.jpg" alt="Grasp Demo 2">
+                <p>Demo 2: Grasping a cylindrical object.</p>
+            </div>
+            <!-- 图片3 -->
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/Uopia/AdaGrasp/main/2.jpg" alt="Grasp Demo 3">
+                <p>Demo 3: Grasping an irregularly shaped object.</p>
+            </div>
         </div>
     </section>
 
